@@ -33,11 +33,11 @@ export default function OAuth() {
     }
   };
   return (
-    <Button type="button" color="gray" outline onClick={handleGoogleClick}>
+    <Button type="button" color="light" outline onClick={handleGoogleClick}>
       <img
         src="../../public/google.png"
         alt="Google"
-        className="w-6 h-6 mr-2"
+        className="w-5 h-5 mr-2"
       />
       Continue with Google
     </Button>

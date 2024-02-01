@@ -85,7 +85,12 @@ export default function SignUp() {
                 onChange={handleChange}
               />
             </div>
-            <Button color="gray" type="submit" disabled={loading}>
+            <Button
+              outline
+              gradientDuoTone="tealToLime"
+              type="submit"
+              disabled={loading}
+            >
               {loading ? (
                 <>
                   <Spinner size="sm" />
