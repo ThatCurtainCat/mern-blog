@@ -41,7 +41,7 @@ export default function CreatePost() {
         },
         (error) => {
           setImageUploadError(
-            "Image upload failed, the size of the picture should not exceed 2MB "
+            "Image upload failed, the size of the picture should not exceed 2MB. "
           );
           setImageUploadProgress(null);
         },
