@@ -40,7 +40,9 @@ export default function CreatePost() {
           setImageUploadProgress(progress.toFixed(0));
         },
         (error) => {
-          setImageUploadError("Image upload failed");
+          setImageUploadError(
+            "Image upload failed, the size of the picture should not exceed 2MB "
+          );
           setImageUploadProgress(null);
         },
         () => {
