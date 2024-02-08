@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import CallToAction from "../components/CallToAction";
 import CommentSection from "../components/CommentSection";
-import PostCard from "../components/PostCard";
+//import PostCard from "../components/PostCard";
 
 export default function PostPage() {
   const { postSlug } = useParams();
@@ -36,20 +36,20 @@ export default function PostPage() {
     fetchPost();
   }, [postSlug]);
 
-  useEffect(() => {
-    try {
-      const fetchRecentPosts = async () => {
-        const res = await fetch(`/api/post/getposts?limit=3`);
-        const data = await res.json();
-        if (res.ok) {
-          setRecentPosts(data.posts);
-        }
-      };
-      fetchRecentPosts();
-    } catch (error) {
-      console.log(error.message);
-    }
-  }, []);
+  // useEffect(() => {
+  //   try {
+  //     const fetchRecentPosts = async () => {
+  //       const res = await fetch(`/api/post/getposts?limit=3`);
+  //       const data = await res.json();
+  //       if (res.ok) {
+  //         setRecentPosts(data.posts);
+  //       }
+  //     };
+  //     fetchRecentPosts();
+  //   } catch (error) {
+  //     console.log(error.message);
+  //   }
+  // }, []);
 
   if (loading)
     return (
@@ -70,10 +70,11 @@ export default function PostPage() {
           {post && post.category}
         </Button>
       </Link>
+
       <img
         src={post && post.image}
         alt={post && post.title}
-        className="mt-10 p-3 max-h-[600px] w-full object-cover"
+        className="mt-10 p-3 max-h-[300px] max-w-[500px] self-center object-cover"
       />
       <div className="flex justify-between p-3 border-b border-slate-500 mx-auto w-full max-w-2xl text-xs">
         <span>{post && new Date(post.createdAt).toLocaleDateString()}</span>
