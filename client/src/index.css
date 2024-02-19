@@ -39,3 +39,7 @@ body {
 .dark .post-content a {
   color: red;
 }
+
+.rounded-border {
+  border-radius: 20px;
+}
